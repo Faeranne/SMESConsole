@@ -1,24 +1,10 @@
 package com.mrmakeit.smes;
 
-import java.lang.reflect.Field;
-
-import com.google.common.base.Throwables;
-
 import cpw.mods.fml.common.registry.GameRegistry;
-import cpw.mods.fml.relauncher.ReflectionHelper;
-
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.inventory.Container;
-import net.minecraft.inventory.ContainerPlayer;
-import net.minecraft.inventory.ContainerWorkbench;
 import net.minecraft.inventory.InventoryCrafting;
-import net.minecraft.inventory.SlotCrafting;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
-import net.minecraft.item.crafting.ShapedRecipes;
 import net.minecraft.world.World;
-import net.minecraftforge.oredict.RecipeSorter;
-import net.minecraftforge.oredict.RecipeSorter.Category;
 
 public class WrapShapedRecipe implements IRecipe {
 
@@ -34,8 +20,7 @@ public class WrapShapedRecipe implements IRecipe {
 		// TODO Auto-generated method stub
 		String modId = GameRegistry.findUniqueIdentifierFor(this.recipe.getRecipeOutput().getItem()).modId;
 		if(modId.contains("minecraft")){
-			//return this.recipe.matches(p_77569_1_, p_77569_2_);
-			return false;
+			return this.recipe.matches(p_77569_1_, p_77569_2_);
 		}
 		return false;
 	}
